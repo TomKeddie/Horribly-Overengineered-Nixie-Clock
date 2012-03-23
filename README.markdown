@@ -10,6 +10,8 @@ and a mainboard with the uC and other circuitry. The driver board is designed to
 and the mainboard fits the 5x10 cm limit of ITead Studio/Seeed Studio. A full kit with 6 digits would consist
 of one mainboard PCB and three driver PCBs.
 
+(The firmware will appear here as soon as there is something usable.)
+
 ## BOM
 
 The key components are:
@@ -20,3 +22,20 @@ The key components are:
   * [NXP LPC1764](http://ics.nxp.com/products/lpc1000/lpc17xx/~LPC1764/) ARM Cortex-M3 microcontroller
   * [Micrel KSZ8001L](http://www.micrel.com/page.do?page=product-info/fastether_trans.jsp) Ethernet PHY
 
+## Truth table for module
+
+Note that for ease of routing the truth table doesn't match 74(1)41/K155ID1:
+
+<table>
+  <tr><th>Num</th> <th>A</th> <th>B</th> <th>C</th> <th>D</th></tr>
+  <tr><td>0</td><td>H</td><td>L</td><td>H</td><td>L</td></tr>
+  <tr><td>1</td><td>H</td><td>L</td><td>L</td><td>H</td></tr>
+  <tr><td>2</td><td>L</td><td>H</td><td>H</td><td>L</td></tr>
+  <tr><td>3</td><td>H</td><td>H</td><td>H</td><td>L</td></tr>
+  <tr><td>4</td><td>L</td><td>H</td><td>L</td><td>L</td></tr>
+  <tr><td>5</td><td>H</td><td>L</td><td>L</td><td>H</td></tr>
+  <tr><td>6</td><td>L</td><td>L</td><td>H</td><td>L</td></tr>
+  <tr><td>7</td><td>L</td><td>L</td><td>L</td><td>H</td></tr>
+  <tr><td>8</td><td>L</td><td>L</td><td>L</td><td>L</td></tr>
+  <tr><td>9</td><td>H</td><td>L</td><td>L</td><td>L</td></tr>
+</table>
