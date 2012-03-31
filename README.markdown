@@ -39,3 +39,8 @@ Note that for ease of routing the truth table doesn't match 74(1)41/K155ID1:
   <tr><td>8</td><td>L</td><td>L</td><td>L</td><td>L</td></tr>
   <tr><td>9</td><td>H</td><td>L</td><td>L</td><td>L</td></tr>
 </table>
+
+## Errata for Rev A
+
+  * SWDCLK is not routed to JTAG. Oops.
+  * P0[28] does not have an external pull-up. Note to self: read the datasheet. Twice.
