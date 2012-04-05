@@ -33,7 +33,7 @@ Note that for ease of routing the truth table doesn't match 74(1)41/K155ID1:
   <tr><td>2</td><td>L</td><td>H</td><td>H</td><td>L</td></tr>
   <tr><td>3</td><td>H</td><td>H</td><td>H</td><td>L</td></tr>
   <tr><td>4</td><td>L</td><td>H</td><td>L</td><td>L</td></tr>
-  <tr><td>5</td><td>H</td><td>L</td><td>L</td><td>H</td></tr>
+  <tr><td>5</td><td>H</td><td>H</td><td>L</td><td>L</td></tr>
   <tr><td>6</td><td>L</td><td>L</td><td>H</td><td>L</td></tr>
   <tr><td>7</td><td>L</td><td>L</td><td>L</td><td>H</td></tr>
   <tr><td>8</td><td>L</td><td>L</td><td>L</td><td>L</td></tr>
@@ -44,3 +44,5 @@ Note that for ease of routing the truth table doesn't match 74(1)41/K155ID1:
 
   * SWDCLK is not routed to JTAG. Oops.
   * P0[28] does not have an external pull-up. Note to self: read the datasheet. Twice.
+  * Either LPC parts in general [do not like the cheap-o "tube" 32.768 kHz crystals](http://mbed.org/forum/mbed/topic/1110/) or 
+    I can't figure out the proper load capacitance without an actual datasheet. Will switch to a SMD crystal if Rev B ever comes.
