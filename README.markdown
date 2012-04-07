@@ -46,3 +46,5 @@ Note that for ease of routing the truth table doesn't match 74(1)41/K155ID1:
   * P0[28] does not have an external pull-up. Note to self: read the datasheet. Twice.
   * Either LPC parts in general [do not like the cheap-o "tube" 32.768 kHz crystals](http://mbed.org/forum/mbed/topic/1110/) or 
     I can't figure out the proper load capacitance without an actual datasheet. Will switch to a SMD crystal if Rev B ever comes.
+  * `RESET` was very flaky until I soldered a 1 μF capacitor to GND across it.
+
