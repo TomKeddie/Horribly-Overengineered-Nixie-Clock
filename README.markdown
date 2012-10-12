@@ -20,7 +20,14 @@ The key components are:
   * К155ИД1 drivers
   * [Taylor Electronics HVPS-V](http://www.tayloredge.com/storefront/SmartNixie/PSU/index.html) high voltage power supply
   * [NXP LPC1764](http://ics.nxp.com/products/lpc1000/lpc17xx/~LPC1764/) ARM Cortex-M3 microcontroller
+
+Rev A:
   * [Micrel KSZ8001L](http://www.micrel.com/page.do?page=product-info/fastether_trans.jsp) Ethernet PHY
+
+Rev B:
+ 
+  * [Micrel MIC4680](http://micrel.com/index.php/en/component/joodb/article/41-step-down-internal-switches/24-mic4680.html) buck regulator
+  * [Micrel KSZ8051RNL](http://micrel.com/index.php/en/component/joodb/article/13-phys/10-ksz8051rnl.html) Ethernet PHY
 
 ## Truth table for module
 
@@ -47,4 +54,20 @@ Note that for ease of routing the truth table doesn't match 74(1)41/K155ID1:
   * Either LPC parts in general [do not like the cheap-o "tube" 32.768 kHz crystals](http://mbed.org/forum/mbed/topic/1110/) or 
     I can't figure out the proper load capacitance without an actual datasheet. Will switch to a SMD crystal if Rev B ever comes.
   * `RESET` was very flaky until I soldered a 1 μF capacitor to GND across it.
+  * Ethernet chip went up in smoke. Oops.
+  * No proper way to mount a heatsink on the 7805, and the HVPS audibly complains about low voltages that keep the heat of '05 in check.
+
+## Changelog for Rev B
+
+  * SWDCLK is properly routed.
+  * Added a switch-mode 5V power supply based on [Micrel MIC4680](http://micrel.com/index.php/en/component/joodb/article/41-step-down-internal-switches/24-mic4680.html)
+  * Changed the Ethernet PHY to [Micrel KSZ8051RNL](http://micrel.com/index.php/en/component/joodb/article/13-phys/10-ksz8051rnl.html)
+  * Changed the RTC crystal
+  * Added power and USB LEDs.
+
+## Errata for Rev B
+
+  * RTC still won't oscillate. I haven't given up on it yet, as I have a proper datasheet now.
+  * Ethernet still doesn't work, but at least didn't go up in smoke. Might just be my bad soldering or a software issue.
+
 
